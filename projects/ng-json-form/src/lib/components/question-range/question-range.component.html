@@ -1,0 +1,29 @@
+<ng-container *ngIf="form && field">
+  <div [formGroup]="form" class="form-group">
+
+    <label [attr.position]="field.labelPosition">
+      {{field.label}} <span color="danger"><strong *ngIf="field.required"  class="required-star">*</strong></span> </label>
+    <input
+      class="form-control-range"
+      [ngClass]="{'is-invalid': errors &&  (touched || dirty), 'is-valid': !errors &&  (touched || dirty)}"
+      type="range"
+      [formControlName]="field.key"
+      [min]="field.min"
+      [attr.disabled]="field.disabled ? '': null "
+      [attr.readonly]="field.readonly ? '': null "
+      [max]="field.max" [step]="field.step" snaps="true" ticks="true" />
+    <span [innerHTML]="field.iconStart"></span>
+    <span [innerHTML]="field.iconEnd"></span>
+
+    <lib-validation-messages class="invalid-feedback"
+      [field]="field"
+      [shouldShow]="touched || dirty" 
+      [errors]="errors" >
+    </lib-validation-messages>
+
+    <small [id]="field.key + '-help'" *ngIf="field.helpText" class="form-text text-muted">{{field.helpText}}</small>
+
+
+
+  </div>
+</ng-container>

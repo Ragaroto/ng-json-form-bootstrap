@@ -1,0 +1,17 @@
+<ng-container *ngIf="errors as error;">
+
+    <ng-container *ngIf="shouldShow">
+        <ng-container *ngIf="error['minlength']">
+                O campo {{field.label}} deve conter pelo menos {{error['minlength']['requiredLength']}} caractéres
+        </ng-container>
+        <ng-container *ngIf="error['maxlength']">
+                Tamanho máximo do campo de {{error['maxlength']['requiredLength']}} caractéres
+        </ng-container>
+        <ng-container *ngIf="error['required']">
+                Campo Obrigatório
+        </ng-container>
+        <ng-container *ngIf="error['pattern']">
+                O campo nao esta correto conforme o padrão
+        </ng-container>
+    </ng-container>
+</ng-container>

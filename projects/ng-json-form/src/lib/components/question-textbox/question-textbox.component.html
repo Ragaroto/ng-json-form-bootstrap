@@ -1,0 +1,33 @@
+<ng-container *ngIf="form && field">
+  <div [formGroup]="form" class="form-group" >
+
+    <label [attr.for]="field.key + idSalt" >
+      {{field.label}} <span color="danger"><strong *ngIf="field.required" class="required-star">*</strong> </span>
+    </label>
+    <input
+      autocomplete="off"
+      [ngClass]="{
+        'is-invalid': errors &&  (touched || dirty), 
+        'is-valid': !errors &&  (touched || dirty ), 
+        'form-control': !field.readonly,
+        'form-control-plaintext': field.readonly
+      }"
+      [formControlName]="field.key"
+      [id]="field.key + idSalt"
+      [type]="field.type"
+      [attr.disabled]="field.disabled ? '': null "
+      [attr.readonly]="field.readonly ? '': null "
+      [pattern]="field.pattern ? field.pattern : (field.type == textTypes.email ? regexEmail : '')"
+      [placeholder]="field.placeholder || field.label || '' " [maxlength]="field.maxLength"
+    />
+    
+    <lib-validation-messages class="invalid-feedback"
+      [field]="field"
+      [shouldShow]="touched || dirty" 
+      [errors]="errors" >
+    </lib-validation-messages>
+
+    <small [id]="field.key + '-help'" *ngIf="field.helpText" class="form-text text-muted">{{field.helpText}}</small>
+  
+  </div>
+</ng-container>

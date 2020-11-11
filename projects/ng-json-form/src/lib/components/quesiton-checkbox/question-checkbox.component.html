@@ -1,0 +1,23 @@
+
+<ng-container *ngIf="form && field">
+  <div [formGroup]="form"  class="form-group form-check">
+
+    <input 
+      class="form-check-input" 
+      type="checkbox" [id]="field.key" 
+      [formControlName]="field.key"
+      [attr.disabled]="field.disabled ? '': null "
+      [attr.readonly]="field.readonly ? '': null ">
+    <label class="form-check-label" [for]="field.key">{{field.label}}</label>
+
+    <lib-validation-messages class="invalid-feedback"
+      [field]="field"
+      [shouldShow]="touched || dirty" 
+      [errors]="errors" >
+    </lib-validation-messages>
+
+    <small [id]="field.key + '-help'" *ngIf="field.helpText" class="form-text text-muted">{{field.helpText}}</small>
+
+    
+  </div>
+</ng-container>

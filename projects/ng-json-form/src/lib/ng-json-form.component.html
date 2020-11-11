@@ -1,0 +1,123 @@
+<div class="container">
+  
+  
+  <div [formGroup]="form" *ngIf="localQuestion" class="">
+    
+    <div class="no-padding-sm">
+      <div class="row">
+        <div class="col">
+          <div class="no-padding-sm">
+            <div class="row">
+              
+              <div *ngFor="let field of localQuestion; let i = index; trackBy: trackByFn" [ngClass]="field.size ? ('col-' + field.size) : 'col-auto' " class="">
+                
+                <ng-container [ngSwitch]="field.controlType">
+                  
+                  <!-- TextboxQuestion -->
+                  <div *ngSwitchCase="inputEnum.TEXTBOX ">
+                    <lib-question-textbox 
+                      [field]="field" 
+                      [form]="form"
+                      [touched]="form.get(field.key).touched" 
+                      [dirty]="form.get(field.key).dirty" 
+                      [errors]="form.get(field.key).errors">
+                    </lib-question-textbox>
+                  </div>
+                  
+                  <!-- Select -->
+                  <div *ngSwitchCase="inputEnum.DROPDOWN" >
+                    <lib-question-dropdown 
+                      [field]="field" 
+                      [form]="form"
+                      [touched]="form.get(field.key).touched" 
+                      [dirty]="form.get(field.key).dirty" 
+                      [errors]="form.get(field.key).errors">
+                    </lib-question-dropdown>
+                  </div>
+                  
+                  <!-- Textarea -->
+                  <div *ngSwitchCase="inputEnum.TEXTAREA">
+                    <lib-question-textarea 
+                      [field]="field" 
+                      [form]="form"
+                      [touched]="form.get(field.key).touched" 
+                      [dirty]="form.get(field.key).dirty" 
+                      [errors]="form.get(field.key).errors">
+                    </lib-question-textarea>
+                    
+                  </div>
+                  
+                  <!-- Range -->
+                  <div *ngSwitchCase="inputEnum.RANGE">
+                    <lib-question-range 
+                      [field]="field" 
+                      [form]="form"
+                      [touched]="form.get(field.key).touched" 
+                      [dirty]="form.get(field.key).dirty" 
+                      [errors]="form.get(field.key).errors">
+                    </lib-question-range>
+                  </div>
+                  
+                  
+                  <!-- CheckBox -->
+                  <div *ngSwitchCase="inputEnum.CHECKBOX">
+                    <lib-question-checkbox 
+                      [field]="field" 
+                      [form]="form"
+                      [touched]="form.get(field.key).touched" 
+                      [dirty]="form.get(field.key).dirty" 
+                      [errors]="form.get(field.key).errors">
+                    </lib-question-checkbox>
+                  </div>
+                  
+                  <!-- Radio -->
+                  <div *ngSwitchCase="inputEnum.RADIO">
+                    <lib-question-radio 
+                      [field]="field" 
+                      [form]="form"
+                      [touched]="form.get(field.key).touched" 
+                      [dirty]="form.get(field.key).dirty" 
+                      [errors]="form.get(field.key).errors">
+                    </lib-question-radio>
+                  </div>
+
+                  <div *ngSwitchCase="inputEnum.LIST">
+                    <fieldset [formArrayName]="field.key" class="container-fluid" style="border: 1px solid rgb(128 128 128 / 28%); border-radius: 5px;">
+                      <legend style="text-transform:uppercase;">{{field.key}}</legend>
+                      <div *ngFor="let subfields of field.list; let j=index" class="row">
+                        <div [formGroupName]="j" *ngFor="let subfield of subfields; let k=index" [ngClass]="subfield.size ? ('col-' + subfield.size) : 'col-auto' ">                            
+                          <lib-question-textbox [idSalt]="'--' + j + '--' + k"
+                              [field]="subfield" 
+                              [form]="form.get([field.key, j])"
+                              [touched]="form.get([field.key, j, subfield.key]).touched" 
+                              [dirty]="form.get([field.key, j, subfield.key]).dirty" 
+                              [errors]="form.get([field.key, j, subfield.key]).errors">
+                            </lib-question-textbox>
+                          </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                  
+                </ng-container>
+    
+                
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+  </div>
+  
+
+  <ng-container *ngIf="debugMode">
+    Value:
+    <pre>
+      {{form.value | json}}
+    </pre>
+  </ng-container>
+
+</div>
