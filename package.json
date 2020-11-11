@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "wt": "cd projects/ng-json-form && ng build --watch",
+    "build-lib": "cd projects/ng-json-form && ng build --prod",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
