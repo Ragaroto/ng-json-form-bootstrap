@@ -1,6 +1,6 @@
 {
-  "name": "ng-dynamic-form",
-  "version": "0.0.0",
+  "name": "ng-json-form",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -11,7 +11,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "~10.1.1",
     "@angular/common": "~10.1.1",
@@ -47,5 +47,16 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~4.0.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ragaroto/ng-json-form--bootstrap.git"
+  },
+  "keywords": ["angular", "bootstrap", "json", "form"],
+  "author": "Ragaroto<ragaroto@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ragaroto/ng-json-form--bootstrap/issues"
+  },
+  "homepage": "https://github.com/Ragaroto/ng-json-form--bootstrap"
 }
