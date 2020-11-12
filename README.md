@@ -1,7 +1,5 @@
 
-# Bootstrap Json Form
--------------------
-
+# NG Json Form (Bootstrap Flavour)
 
 ## Instal
 
