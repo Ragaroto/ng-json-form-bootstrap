@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/ng-json-form",
+  "dest": "../../dist/ng-json-form-bootstrap",
   "lib": {
     "entryFile": "src/public-api.ts"
   }

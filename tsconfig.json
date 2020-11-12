@@ -17,8 +17,7 @@
     ],
     "paths": {
       "ng-json-form": [
-        "dist/ng-json-form/ng-json-form",
-        "dist/ng-json-form"
+        "dist/ng-json-form-bootstrap",
       ]
     }
   }
