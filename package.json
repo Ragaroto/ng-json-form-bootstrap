@@ -1,62 +1,23 @@
 {
-  "name": "ng-json-form",
-  "version": "0.0.1",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "wt": "cd projects/ng-json-form && ng build --watch",
-    "build-lib": "cd projects/ng-json-form && ng build --prod",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+  "name": "ng-json-form-bootstrap",
+  "version": "0.0.3",
+  "peerDependencies": {
+    "@angular/common": "^10.1.5",
+    "@angular/core": "^10.1.5"
   },
-  "private": false,
   "dependencies": {
-    "@angular/animations": "~10.1.1",
-    "@angular/common": "~10.1.1",
-    "@angular/compiler": "~10.1.1",
-    "@angular/core": "~10.1.1",
-    "@angular/forms": "~10.1.1",
-    "@angular/platform-browser": "~10.1.1",
-    "@angular/platform-browser-dynamic": "~10.1.1",
-    "@angular/router": "~10.1.1",
-    "ang-jsoneditor": "^1.10.3",
-    "jsoneditor": "^9.1.1",
-    "rxjs": "~6.6.0",
-    "tslib": "^2.0.0",
-    "zone.js": "~0.10.2"
-  },
-  "devDependencies": {
-    "@angular-devkit/build-angular": "~0.1001.6",
-    "@angular/cli": "~10.1.1",
-    "@angular/compiler-cli": "~10.1.1",
-    "@types/node": "^12.11.1",
-    "@types/jasmine": "~3.5.0",
-    "@types/jasminewd2": "~2.0.3",
-    "codelyzer": "^6.0.0",
-    "jasmine-core": "~3.6.0",
-    "jasmine-spec-reporter": "~5.0.0",
-    "karma": "~5.0.0",
-    "karma-chrome-launcher": "~3.1.0",
-    "karma-coverage-istanbul-reporter": "~3.0.2",
-    "karma-jasmine": "~4.0.0",
-    "karma-jasmine-html-reporter": "^1.5.0",
-    "ng-packagr": "^10.1.0",
-    "protractor": "~7.0.0",
-    "ts-node": "~8.3.0",
-    "tslint": "~6.1.0",
-    "typescript": "~4.0.2"
+    "tslib": "^2.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Ragaroto/ng-json-form--bootstrap.git"
+    "url": "https://github.com/Ragaroto/ng-json-form-bootstrap.git"
   },
   "keywords": ["angular", "bootstrap", "json", "form"],
   "author": "Ragaroto<ragaroto@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Ragaroto/ng-json-form--bootstrap/issues"
+    "url": "https://github.com/Ragaroto/ng-json-form-bootstrap/issues"
   },
-  "homepage": "https://github.com/Ragaroto/ng-json-form--bootstrap"
+  "homepage": "https://github.com/Ragaroto/ng-json-form-bootstrap"
+  
 }
